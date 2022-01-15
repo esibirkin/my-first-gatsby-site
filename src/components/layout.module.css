@@ -8,7 +8,7 @@
     color: rebeccapurple;
 
 }
-.nav-linka {
+.nav-links {
     display: flex;
     list-style: none;
     padding-left: 0;
@@ -17,4 +17,8 @@
 .nav-link-text {
     color: black;
 
+}
+.nav-link-text {
+    color: black;
+    
 }
