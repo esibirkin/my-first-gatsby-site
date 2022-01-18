@@ -16,5 +16,8 @@ module.exports = {
  
     },
         "gatsby-plugin-mdx",
+        "@mdx-js/mdx",
+        "@mdx-js/mdx",
+
 ],
 };
