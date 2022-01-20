@@ -13,6 +13,12 @@ const BlogPost = ({data}) => {
          image={image}
          alt={data.mdx.frontmatter.hero_image_alt}
          />
+         <p>
+        Photo Credit:{" "}
+        <a href={data.mdx.frontmatter.hero_image_credit_link}>
+          {data.mdx.frontmatter.hero_image_credit_text}
+        </a>
+      </p>
          <MDXRenderer>
              {data.mdx.body}
          </MDXRenderer>
@@ -21,7 +27,7 @@ const BlogPost = ({data}) => {
             )
 }
 export const query = graphql`
-query ($id: String)  {
+query   {
     mdx(id: {eq: $id}) {
       frontmatter {
         title
@@ -29,7 +35,7 @@ query ($id: String)  {
         hero_image_alt
         hero_image_credit_link
         hero_image_credit_text
-        hero_image 
+        hero_image  
         
       }
       body
