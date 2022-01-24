@@ -27,20 +27,23 @@ const BlogPost = ({data}) => {
             )
 }
 export const query = graphql`
-query   {
-    mdx {
-      frontmatter {
-        title
-        date(formatString: "MMMM D, YYYY")
-        hero_image_alt
-        hero_image_credit_link
-        hero_image_credit_text
-        hero_image  
-        
+query ($id: String) {
+  mdx(id: {eq: $id}) {
+    frontmatter {
+      title
+      date
+      hero_image_alt
+      hero_image_credit_link
+      hero_image_credit_text
+      hero_image {
+        childImageSharp {
+          gatsbyImageData
+        }
       }
-      body
     }
+    body
   }
-  `
+}
+`
   
 export default BlogPost
